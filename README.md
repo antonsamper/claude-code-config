@@ -17,7 +17,7 @@ This repository contains my Claude Code customizations to maintain consistency a
 ```
 .
 ├── README.md
-├── user/                       # User-level configs (~/.claude/)
+├── {user}/                       # User-level configs (~/.claude/)
 │   ├── CLAUDE.md               # Personal memory/preferences
 │   ├── commands/               # Personal slash commands
 │   │   ├── review.md
@@ -43,25 +43,25 @@ Follow the [official installation guide](https://code.claude.com/docs/en/overvie
 
 ### 2. Clone This Repository
 ```bash
-git clone https://github.com/yourusername/claude-code-config.git
+git clone git@github.com:antonsamper/claude-code-config.git
 cd claude-code-config
 ```
 
 ### 3. Restore User-Level Configurations
 ```bash
 # Copy user memory
-cp user/CLAUDE.md ~/.claude/
+cp {user}/CLAUDE.md ~/.claude/
 
 # Copy user commands
 mkdir -p ~/.claude/commands
-cp -r user/commands/* ~/.claude/commands/
+cp -r {user}/commands/* ~/.claude/commands/
 
 # Copy user agents
 mkdir -p ~/.claude/agents
-cp -r user/agents/* ~/.claude/agents/
+cp -r {user}/agents/* ~/.claude/agents/
 
 # Copy user settings (hooks, etc.)
-cp user/settings.json ~/.claude/settings.json
+cp {user}/settings.json ~/.claude/settings.json
 ```
 
 ### 4. Restore MCP Servers (if applicable)
@@ -112,10 +112,10 @@ Regularly backup your configurations:
 cd ~/path/to/claude-code-config
 
 # Update user configs
-cp ~/.claude/CLAUDE.md user/
-cp -r ~/.claude/commands/* user/commands/
-cp -r ~/.claude/agents/* user/agents/
-cp ~/.claude/settings.json user/
+cp ~/.claude/CLAUDE.md {user}/
+cp -r ~/.claude/commands/* {user}/commands/
+cp -r ~/.claude/agents/* {user}/agents/
+cp ~/.claude/settings.json {user}/
 
 # Export MCP server list
 claude mcp list > mcp/mcp-servers.txt
