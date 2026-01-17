@@ -8,7 +8,8 @@ This repository contains my Claude Code customizations to maintain consistency a
 
 - **Memory Files** (`CLAUDE.md`) - Personal preferences and communication style
 - **Slash Commands** (`.claude/commands/`) - Reusable prompt templates
-- **Agents** (`.claude/agents/`) - Specialized AI assistants for specific tasks
+- **Skills** - Workflows Claude automatically invokes based on context
+- **Agents** (`.claude/agents/`) - Specialised AI assistants for specific tasks
 - **Hooks** (`settings.json`) - Automated workflows and validations
 - **MCP Server Configurations** - Integrations with external tools and services
 
@@ -17,7 +18,7 @@ This repository contains my Claude Code customizations to maintain consistency a
 ```
 .
 ├── README.md
-├── {user}/                       # User-level configs (~/.claude/)
+├── {user}/                     # User-level configs (~/.claude/)
 │   ├── CLAUDE.md               # Personal memory/preferences
 │   ├── commands/               # Personal slash commands
 │   │   ├── review.md
@@ -83,6 +84,14 @@ Quick prompts invoked with `/command-name`:
 - `/review` - Code review checklist
 - `/optimize` - Performance analysis
 - Custom workflows you use frequently
+
+### Skills
+Workflows that Claude **automatically invokes** based on task context:
+- Claude reads skill descriptions at startup and decides when to use them
+- Use for **repeatable workflows** you want Claude to trigger without explicit commands
+- Differ from slash commands: Skills are model-invoked; commands require manual `/command-name`
+- Can also be invoked manually with `/skill-name` if needed
+- [Skills documentation](https://code.claude.com/docs/en/skills)
 
 ### Agents (Subagents)
 Specialized AI assistants with dedicated context:
